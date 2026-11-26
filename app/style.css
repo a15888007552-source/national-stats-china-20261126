@@ -1,0 +1,344 @@
+/* China in Numbers — visual design.
+   Deep navy header, warm amber accent, slate text on a pale blue-grey
+   ground. System type only: no webfonts, so the site works fully offline.
+   Layout is a single centred column that collapses to one column on phones.
+   Breakpoints: two-column stats at 720px, one column at 420px. */
+
+:root {
+  --navy: #0e2a47;
+  --navy-deep: #0a1f36;
+  --blue: #1d5c9e;
+  --blue-soft: #e8f0f8;
+  --amber: #e8a33d;
+  --amber-dark: #b97e1d;
+  --teal: #1f7a6d;
+  --ink: #1c2733;
+  --muted: #5b6b7d;
+  --line: #dfe6ec;
+  --ground: #f4f6f8;
+  --card: #ffffff;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+/* ---------- Header and navigation ---------- */
+
+.site-header {
+  background: linear-gradient(180deg, var(--navy), var(--navy-deep));
+  color: #fff;
+}
+
+.header-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 16px 20px 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: var(--amber);
+  color: var(--navy-deep);
+  font-weight: 800;
+  font-size: 19px;
+  letter-spacing: 0.5px;
+}
+
+.brand-name {
+  display: block;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  line-height: 1.15;
+}
+
+.brand-sub {
+  display: block;
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #b9c9da;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-top: 14px;
+  padding-bottom: 0;
+  overflow-x: auto;
+}
+
+.nav-link {
+  padding: 10px 13px;
+  border-radius: 8px 8px 0 0;
+  color: #cdd9e6;
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.nav-link:hover { color: #fff; background: rgba(255, 255, 255, 0.08); }
+
+.nav-link.active {
+  background: var(--ground);
+  color: var(--navy);
+}
+
+/* ---------- Main column ---------- */
+
+.view {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+}
+
+h1 {
+  margin: 4px 0 8px;
+  font-size: 30px;
+  line-height: 1.2;
+  color: var(--navy);
+}
+
+h2 {
+  margin: 0 0 6px;
+  font-size: 19px;
+  color: var(--navy);
+}
+
+.lede {
+  max-width: 72ch;
+  margin: 0 0 22px;
+  font-size: 17px;
+  color: #33465a;
+}
+
+.hero h1 { font-size: 36px; }
+
+.hero .lede { font-size: 18px; }
+
+/* ---------- Cards and grids ---------- */
+
+.grid { display: grid; gap: 16px; }
+
+.stats-grid {
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 20px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(14, 42, 71, 0.06);
+}
+
+.stat { margin-bottom: 0; }
+
+.stat-label {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.stat-value {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--navy);
+}
+
+.stat-unit { font-size: 15px; font-weight: 600; color: var(--muted); }
+
+.stat-year { margin: 6px 0 0; font-size: 12.5px; color: var(--muted); }
+
+.note { margin: 8px 0 0; font-size: 13.5px; color: var(--muted); }
+
+.cite { font-size: 12.5px; color: var(--muted); }
+
+.chart-card canvas {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.facts { margin: 6px 0 0; padding-left: 20px; }
+
+.facts li { margin: 6px 0; }
+
+/* ---------- Controls: tabs, year picker, sort, search ---------- */
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 16px;
+}
+
+.tab {
+  padding: 9px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--navy);
+  font: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tab:hover { border-color: var(--blue); }
+
+.tab.active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+
+.year-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
+}
+
+.year-btn {
+  min-width: 64px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--navy);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.year-btn:hover { border-color: var(--blue); }
+
+.year-btn.active {
+  background: var(--amber);
+  border-color: var(--amber-dark);
+  color: var(--navy-deep);
+}
+
+.search {
+  width: 100%;
+  max-width: 480px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 15px;
+  background: #fff;
+  color: var(--ink);
+}
+
+.search:focus {
+  outline: 2px solid var(--blue);
+  outline-offset: 1px;
+}
+
+.sort-btn {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sort-btn:hover { color: var(--blue); }
+
+.sort-btn.sorted { color: var(--blue); }
+
+.hidden { display: none; }
+
+/* ---------- Tables ---------- */
+
+.table-wrap { overflow-x: auto; margin-top: 12px; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+}
+
+th, td {
+  padding: 9px 10px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+thead th {
+  background: var(--blue-soft);
+  color: var(--navy);
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+tbody tr:hover { background: #f8fafc; }
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px 36px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.site-footer p { margin: 6px 0; }
+
+/* ---------- Phone widths ---------- */
+
+@media (max-width: 720px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero h1 { font-size: 29px; }
+  h1 { font-size: 25px; }
+  .stat-value { font-size: 25px; }
+  .site-nav { flex-wrap: nowrap; }
+  .card { padding: 16px; }
+  .view { padding-top: 20px; }
+}
+
+@media (max-width: 420px) {
+  .stats-grid { grid-template-columns: 1fr; }
+}

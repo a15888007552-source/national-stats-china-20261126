@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>China in Numbers — National Statistics Explorer</title>
+<meta name="description" content="Population, economy, trade, employment, environment, education and health figures for China, with sources and years, from the National Bureau of Statistics of China.">
+<!-- China in Numbers: one shell page; the seven sections render into #view. -->
+<link rel="stylesheet" href="style.css">
+<script src="data.js" defer></script>
+<script src="charts.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#/">
+      <span class="brand-mark" aria-hidden="true">CN</span>
+      <span class="brand-text">
+        <span class="brand-name">China in Numbers</span>
+        <span class="brand-sub">National Statistics Explorer</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Sections">
+      <a class="nav-link" href="#/">Overview</a>
+      <a class="nav-link" href="#/population">Population</a>
+      <a class="nav-link" href="#/economy">Economy</a>
+      <a class="nav-link" href="#/trade">Trade</a>
+      <a class="nav-link" href="#/employment">Employment</a>
+      <a class="nav-link" href="#/environment">Environment</a>
+      <a class="nav-link" href="#/education-health">Education &amp; Health</a>
+    </nav>
+  </div>
+</header>
+<main id="view" class="view"></main>
+<footer class="site-footer">
+  <p>All figures on this site are from the National Bureau of Statistics of China (annual Statistical Communiqué and China Statistical Yearbook, 2019–2023). Each figure is shown with the year it belongs to.</p>
+  <p>China in Numbers is an independent statistics explorer. It is not affiliated with, or endorsed by, the National Bureau of Statistics of China.</p>
+</footer>
+</body>
+</html>
